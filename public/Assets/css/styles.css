@@ -15,12 +15,12 @@ button.button-cancel{
 /*Style LOGIN*/
 
 #login {
-    background: linear-gradient(110deg,#4c79d3 44.9%, #FFF 45%) no-repeat fixed;
+    background: linear-gradient(120deg,#4c79d3 44.9%, #FFF 45%) no-repeat fixed;
 }
 
 .text-login{
     color: #fff;
-    font-size: 18px;
+    font-size: 25px;
     font-weight:500;
 }
 .coins{
