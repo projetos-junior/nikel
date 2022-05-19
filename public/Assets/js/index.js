@@ -1,4 +1,8 @@
 const myModal = new bootstrap.Modal("#register-modal");
+let logged = sessionStorage.getItem("logged");
+const session = localStorage.getItem("session");
+
+checkedLogged();
 //Fazendo logim
 document.getElementById("login-form").addEventListener("submit", function (e) {
     e.preventDefault();
@@ -6,7 +10,7 @@ document.getElementById("login-form").addEventListener("submit", function (e) {
     //Pega valor dos campos da tela de Login
     const email = document.getElementById("email-input").value;
     const password = document.getElementById("password-input").value;
-    const session = document.getElementById("session-check").checked;
+    const checkSession = document.getElementById("session-check").checked;
 
     const account = getAccount(email);
 
@@ -21,7 +25,11 @@ document.getElementById("login-form").addEventListener("submit", function (e) {
             alert("Opps! Verificar o usuário ou a senha.");
             return;
         }
-        window.location.href = "home.html";
+
+        saveSession(email, checkSession);
+
+
+        window.location.href = "home.html";// quando o user entra com o usuario e senha, se loga no sistema e vai para a home.
     }
 
 });
@@ -50,12 +58,31 @@ document.getElementById("create-form").addEventListener("submit", function (e) {
         transactions: []
     })
     myModal.hide(); //Fecha a Modal
-    alert("Conta criada com sucesso.")
+    alert("Conta criada com sucesso.");
 });
 
+function checkedLogged(){
+    if (session) {
+        sessionStorage.setItem("logged", session);
+        logged = session;
+    }
+
+    if (logged){
+        saveSession(logged, session);
+
+        window.location.href = "home.html"
+    }
+}
 //Salva os dados de criação da conta
 function saveAccount(data) {
     localStorage.setItem(data.login, JSON.stringify(data));
+}
+
+function saveSession(data, saveSession) {
+    if(saveSession) {
+        localStorage.setItem("session", data);
+    }
+    sessionStorage.setItem("logged", data);
 }
 
 function getAccount(key) {
@@ -68,3 +95,4 @@ function getAccount(key) {
     return "";
 
 }
+
