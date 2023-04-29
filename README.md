@@ -12,4 +12,4 @@ transations.js - Criado para lançar e tras todos os lançamentos em uma tabela.
 
 aplicaçào foi finalizada.
 
-Growdev [Codai]https://growdev.teachable.com/
+Growdev - Projeto [Codai](https://growdev.teachable.com/)
