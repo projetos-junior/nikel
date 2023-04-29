@@ -10,6 +10,6 @@ home.js - Criados para lancar, salvar, filtrar trazendo os 5 ultimos lançamento
 
 transations.js - Criado para lançar e tras todos os lançamentos em uma tabela.
 
-aplicaçào foi finalizada.
+aplicação foi finalizada.
 
 Growdev - Projeto [Codai](https://growdev.teachable.com/)
