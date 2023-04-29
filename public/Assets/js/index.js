@@ -2,7 +2,7 @@ const myModal = new bootstrap.Modal("#register-modal");
 let logged = sessionStorage.getItem("logged");
 const session = localStorage.getItem("session");
 
-checkedLogged();
+checkLogged();
 //Fazendo logim
 document.getElementById("login-form").addEventListener("submit", function (e) {
     e.preventDefault();
@@ -14,27 +14,26 @@ document.getElementById("login-form").addEventListener("submit", function (e) {
 
     const account = getAccount(email);
 
-    // verifica se a conta existe 
+    // Codigo para verifica se a conta existe
     if (!account) {
         alert("Opps! Verificar o usuário ou a senha.");
         return;
     }
-    //Verifica se a senha é igual
+    //Codigo para verifica se a senha é igual
     if (account) {
-        if(account.password !== password){
+        if (account.password !== password) {
             alert("Opps! Verificar o usuário ou a senha.");
             return;
         }
 
         saveSession(email, checkSession);
 
-
-        window.location.href = "home.html";// quando o user entra com o usuario e senha, se loga no sistema e vai para a home.
+        // quando o user entra com o usuario e senha, se loga no sistema e vai para a home.
+        window.location.href = "home.html";
     }
-
 });
 
-//Criar conta
+//Codigo para criar conta de usuario
 document.getElementById("create-form").addEventListener("submit", function (e) {
     e.preventDefault();
 
@@ -56,21 +55,21 @@ document.getElementById("create-form").addEventListener("submit", function (e) {
         login: email,
         password: pass,
         transactions: []
-    })
+    });
     myModal.hide(); //Fecha a Modal
     alert("Conta criada com sucesso.");
 });
 
-function checkedLogged(){
+function checkLogged() {
     if (session) {
         sessionStorage.setItem("logged", session);
         logged = session;
     }
 
-    if (logged){
+    if (logged) {
         saveSession(logged, session);
 
-        window.location.href = "home.html"
+        window.location.href = "home.html";
     }
 }
 //Salva os dados de criação da conta
@@ -79,20 +78,18 @@ function saveAccount(data) {
 }
 
 function saveSession(data, saveSession) {
-    if(saveSession) {
+    if (saveSession) {
         localStorage.setItem("session", data);
     }
     sessionStorage.setItem("logged", data);
 }
 
 function getAccount(key) {
-    const account = localStorage.getItem(key)
+    const account = localStorage.getItem(key);
 
     if (account) {
         return JSON.parse(account);
     }
 
     return "";
-
 }
-
