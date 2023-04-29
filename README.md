@@ -8,7 +8,7 @@ index.js - criação de conta, validação dos campos, salvando no storangLocal 
 
 home.js - Criados para lancar, salvar, filtrar trazendo os 5 ultimos lançamentos e calculando o total.
 
-transations.js - Criado para lançar e tras todos os lançamentos em uma tabela.
+transations.js - Criado para lançar e traz todos os lançamentos em uma tabela.
 
 aplicação foi finalizada.
 
