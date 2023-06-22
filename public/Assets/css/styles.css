@@ -15,11 +15,10 @@ button.button-cancel{
 /*Style LOGIN*/
 
 #login {
-    background: linear-gradient(120deg,#4c79d3 44.9%, #FFF 45%) no-repeat fixed;
+    background: linear-gradient(90deg,#bebcbc 50%, #FFF 50%) no-repeat fixed;
 }
 
 .text-login{
-    color: #fff;
     font-size: 25px;
     font-weight:500;
 }
@@ -28,11 +27,11 @@ button.button-cancel{
     bottom: 100px;
 }
 button.btn-login {
-    background-color: #4E0070;
-    border-radius: 10px;
+    background-color: #04c35c;
+    border-radius: 5px;
     color: #FFFFFF;
-    width: 50%;
-    margin: 0 25%;
+    width: 70%;
+    margin: 0 15%;
 }
 
 button.btn-login:hover, button.button-defauld:hover {
@@ -52,7 +51,7 @@ span.link-default:hover {
 /*style pagina HOME*/
 
 #app{
-    background: linear-gradient(110deg, #FFF 44.9%,#4c79d3 45%) no-repeat fixed;
+    background: linear-gradient(90deg, #FFF 50%,#4c79d3 50%) no-repeat fixed;
 }
 header{
     border-bottom: 1px solid #bebcbc;
